@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^9.0.0",
-    "astro": "^4.2.8",
+    "astro": "^4.3.0",
     "@marplex/flarebase-auth": "^1.2.0"
   },
   "devDependencies": {
