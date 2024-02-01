@@ -1,12 +1,17 @@
 import type { APIRoute } from 'astro';
+import { FlarebaseAuth } from 'flarebase-auth';
 
 export const prerender = false;
 
-const apiKey = import.meta.env.API_KEY;
-console.log(apiKey);
+
+const authConfig: FlarebaseConfig = {
+  apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+  projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+  privateKey: import.meta.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+  serviceAccountEmail: import.meta.env.FIREBASE_CLIENT_EMAIL,
+};
+const serverAuth = new FlarebaseAuth(authConfig);
+
 export const GET: APIRoute = async () => {
-  const anotherApiKey = import.meta.env.API_KEY;
-  console.log(anotherApiKey);
-  console.log(apiKey);
-  return new Response(`${apiKey} ${anotherApiKey}`, { status: 200 });
+  return new Response(null, { status: 200 });
 };
