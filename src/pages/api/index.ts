@@ -1,5 +1,7 @@
 import type { APIRoute } from 'astro';
 
+export const prerender = false;
+
 const apiKey = import.meta.env.API_KEY;
 console.log(apiKey);
 export const GET: APIRoute = async () => {
