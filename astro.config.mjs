@@ -9,7 +9,7 @@ export default defineConfig({
     mode: "advanced",
     runtime: {
       type: "pages",
-      mode: "off",
+      mode: "local",
     },
   }),
 });
