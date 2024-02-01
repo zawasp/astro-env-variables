@@ -1,7 +1,6 @@
 import type { APIRoute } from 'astro';
 import { type FlarebaseConfig, FlarebaseAuth } from "@marplex/flarebase-auth";
 
-export const prerender = false;
 
 const authConfig: FlarebaseConfig = {
   apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
@@ -10,6 +9,8 @@ const authConfig: FlarebaseConfig = {
   serviceAccountEmail: import.meta.env.FIREBASE_CLIENT_EMAIL,
 };
 const serverAuth = new FlarebaseAuth(authConfig);
+
+export const prerender = false;
 
 export const GET: APIRoute = async () => {
   console.log(serverAuth);
