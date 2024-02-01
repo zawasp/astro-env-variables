@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
-import { FlarebaseAuth } from 'flarebase-auth';
+import {  type FlarebaseConfig,
+  FlarebaseAuth } from 'flarebase-auth';
 
 export const prerender = false;
 
